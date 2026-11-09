@@ -1,10 +1,5 @@
 import os
 
-from flask import Flask, abort, redirect, render_template, request, url_for
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
-
 from flask import Flask, abort, flash, redirect, render_template, request, url_for
 
 from forms import RegistrationForm
