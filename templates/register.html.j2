@@ -1,0 +1,24 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+    <form method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {% if form.errors.username %}
+                <b class='text-red font-smaller'>{{form.errors.username}}</b>
+            {% endif %}
+            {{ form.username.label }} <br/>
+            {{form.username(size=32)}}
+        </p>
+        <p>
+            {% if form.errors.email %}
+                <b class='text-red font-smaller'>{{form.errors.email}}</b>
+            {% endif %}
+            {{ form.email.label }}  <br/>
+            {{form.email(size=32)}}
+        </p>
+        <p>
+            {{form.submit()}}
+        </p>
+    </form>
+{% endblock %}

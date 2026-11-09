@@ -58,5 +58,14 @@
     <div class="container">
       {% block content %}{% endblock %}
     </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="absolute right-4 top-4 card p-2 w-12">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
   </body>
 </html>
